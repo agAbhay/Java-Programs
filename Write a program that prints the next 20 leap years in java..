@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+class LeapYear
+{
+    public static void main(String args[])
+    {
+        Scanner abhay = new Scanner(System.in);
+        System.out.println("Enter the current year to find out the next 20 leap year");
+        int currentYear=abhay.nextInt();
+        LeapYear lp=new LeapYear();
+        int count=0;
+        for (int i=currentYear;i<=5000;i++)
+        {
+            if(lp.LeapY(i)==true)
+            {
+                System.out.println("  "+ i);
+                count++;
+            }
+            if (count==20)
+                break;
+        }
+    }
+    public boolean LeapY(int currentYear)
+    {
+        return  currentYear % 4 == 0 & (currentYear%100!=0 || currentYear % 400 == 0);
+    }
+
+}
+
